@@ -25,7 +25,9 @@
               }
               
           });
-            AFRAME.registerComponent('play-pause',
+      </script>
+      <script>
+            AFRAME.registerComponent('play-pause-cola',
         {
               init: function(){
                   var myvideo= document.querySelector('#videocola');
@@ -33,10 +35,10 @@
                   this.el.addEventListener('click', function(){
                       if(myvideo.paused){
                           myvideo.play();
-                          videocontrole1.setAttribute('src','#pause1');
+                          videocontrole1.setAttribute('src','#pausecola');
                       }else{
                           myvideo.pause();
-                          videocontrole1.setAttribute('src','#play1');
+                          videocontrole1.setAttribute('src','#playcola');
                       }
                   })
               }
@@ -60,16 +62,15 @@
         
          <img id="logo" src="img/logo.png" >
            <img id="cola" src="img/cola.png" >
-         <a-asset-item id="virtuel" src="/stand_design/scene.gltf"
-         response-type="arraybuffer"></a-asset-item>
-        <img id="play1" src="img/play-store.png">  
-       <img id="pause1" src="img/bouton-pause-compose-de-deux-lignes-verticales.png">
-
+       
         <img id="play" src="img/play-store.png">
-           <img id="pause" src="img/bouton-pause-compose-de-deux-lignes-verticales.png">
-           <video id="video" src="img/istic.mp4"></video>
-           <video id="videocola" src="img/Coca-Cola%20%E2%80%93%20Turn%20Up%20Your%20Rhythm.mp4"></video>
-           <a href="http://www.istic.rnu.tn/fr/" id="link"></a>
+        <img id="pause" src="img/bouton-pause-compose-de-deux-lignes-verticales.png">
+        <video id="video" src="img/istic.mp4"></video>
+        <img id="playcola" src="img/play-store.png">
+        <img id="pausecola" src="img/bouton-pause-compose-de-deux-lignes-verticales.png">
+         <video id="videocola" src="img/Coca-Cola%20%E2%80%93%20Turn%20Up%20Your%20Rhythm.mp4"></video>
+           
+        
        </a-assets>
          
              
@@ -92,19 +93,23 @@
            material="metalness:1; roughness:0; transparent: true; opacity: .7; shader: standard; 
            color: #faaf52; side:double;"   ></a-plane>
        </a-entity>
-        <--!-->video </--!-->
-       
-       <a-entity id="videoplay" class="homeworld" position="-6 6.5 -9.5">
+         <!--link istic -->
+         <a-entity position="-9.2 8.6 -9.8"  > 
+        <a-link href="http://www.istic.rnu.tn/fr/" material="shader:portal;side:double;backgroundColor:#00fffb" geometry="primitive:circle;segments:1" link="backgroundColor:#00fffb" scale="0.3 0.3 0"><a-entity text="color:white;align:center;font:kelsonsans;value:http://www.istic.rnu.tn/fr/;width:10" position="0 1.5 0" rotation=""></a-entity>
+        </a-link>
+        </a-entity>
+        <!-- video -->
+       <a-entity id="videoplay" class="homeworld" position="-6 6.5 -9.8">
          <a-plane id="videoframe" color="#191817" width="5" height="5"></a-plane>
          <a-plane id="isticvideo" src="#video" position="0 0 .1" width="5" height="5"  >
              <a-image id="videocontrole" src="#play" position="0 -2.65 0" scale="0.5 0.5 1" play-pause></a-image>
            </a-plane>
-        
+     
        </a-entity>
-           <--!-->fin video </--!-->
+           <!--fin video-->
        
          
-     <--!-->logo d istic avec box </--!-->  
+     <!--logo d istic avec box-->  
       <a-entity id="linkplay" class="homeworld" position="-7 0.9 -8">
           <a-box   
                  width="1" height="1" depth="1" position="0.9 1.2 0"
@@ -120,7 +125,7 @@
           text="value: Higher Institue of Information and Communication Technologies; width: 2; wrapCount: 30; align: center" 
           ></a-plane>
        </a-entity>
-  <--!-->  fin logo d istic avec box </--!--> 
+  <!--  fin logo d istic avec box--> 
         
        
        <a-circle id="homebutton" position="0 .1 0" rotation="-90 0 0" backhome></a-circle>
@@ -130,21 +135,21 @@
          
          
          
-          <--!-->video cola </--!-->
+          <!--video cola -->
        
-       <a-entity id="videoplay1" class="homeworld" position="6 6.5 -9.5">
+       <a-entity id="videoplaycola" class="homeworld" position="6 6.5 -9.5">
          <a-plane id="videoframe1" color="#191817" width="5" height="5"></a-plane>
          <a-plane id="videocola" src="#videocola" position="0 0 .1" width="5" height="5"  >
-             <a-image id="videocontrole1" src="#play1" position="0 -2.65 0" scale="0.5 0.5 1" play-pause></a-image>
+             <a-image id="videocontrole1" src="#playcola" position="0 -2.65 0" scale="0.5 0.5 1" play-pause-cola></a-image>
            </a-plane>
         
        </a-entity>
-           <--!-->fin video cola  </--!-->
+           <!--fin video cola -->
        
          
          
            
-     <--!-->logo d cola avec box </--!-->  
+     <!--logo d cola avec box -->  
       <a-entity id="linkplay" class="homeworld" position="3 0.8 -7.5">
           <a-box   
                  width="1" height="1" depth="1" position="0.9 1 0"
@@ -160,7 +165,7 @@
           text="value: Higher Institue of Information and Communication Technologies; width: 2; wrapCount: 30; align: center" 
           ></a-plane>
        </a-entity>
-  <--!-->  fin logo d cola avec box </--!--> 
+  <!--fin logo d cola avec box --> 
         
        
          
