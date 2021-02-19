@@ -1,0 +1,221 @@
+<html> 
+  
+  <head>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"> </script>
+      <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="js/backhome.js"></script>
+      <script src="js/sphereexpand.js"></script>
+      
+      <script>
+          AFRAME.registerComponent('play-pause',
+        {
+              init: function(){
+                  var myvideo= document.querySelector('#video');
+                  var videocontrole= document.querySelector('#videocontrole');
+                  this.el.addEventListener('click', function(){
+                      if(myvideo.paused){
+                          myvideo.play();
+                          videocontrole.setAttribute('src','#pause');
+                      }else{
+                          myvideo.pause();
+                          videocontrole.setAttribute('src','#play');
+                      }
+                  })
+              }
+              
+          });
+      </script>
+      <script>
+            AFRAME.registerComponent('play-pause-cola',
+        {
+              init: function(){
+                  var myvideo= document.querySelector('#videocola');
+                  var videocontrole1= document.querySelector('#videocontrole1');
+                  this.el.addEventListener('click', function(){
+                      if(myvideo.paused){
+                          myvideo.play();
+                          videocontrole1.setAttribute('src','#pausecola');
+                      }else{
+                          myvideo.pause();
+                          videocontrole1.setAttribute('src','#playcola');
+                      }
+                  })
+              }
+              
+          });
+      </script>
+   
+  
+      
+  </head>
+  
+  <body>
+    
+     <a-scene >
+       
+       <a-assets>
+           
+         <img id="woodfloor" src="img/floor.jpg">
+         <img id="wall" src="img/wall.jpg">
+         <img id="starsky" src="img/sky.jpg">
+        
+         <img id="logo" src="img/logo.png" >
+           <img id="cola" src="img/cola.png" >
+       
+        <img id="play" src="img/play-store.png">
+        <img id="pause" src="img/bouton-pause-compose-de-deux-lignes-verticales.png">
+        <video id="video" src="img/istic.mp4"></video>
+        <img id="playcola" src="img/play-store.png">
+        <img id="pausecola" src="img/bouton-pause-compose-de-deux-lignes-verticales.png">
+         <video id="videocola" src="img/Coca-Cola%20%E2%80%93%20Turn%20Up%20Your%20Rhythm.mp4"></video>
+           
+        
+       </a-assets>
+         
+             
+      <a-entity id="camera" position="0 1.6 0" camera look-controls wasd-controls>
+        <a-entity cursor="rayOrigin: mouse"></a-entity>
+      </a-entity>
+      
+      <a-entity laser-controls="hand:right"></a-entity>
+
+
+      <a-sky id="sky" src="#starsky"></a-sky>
+       
+      <a-entity  id="architecture" class="homeworld">
+         <a-plane id="floor" rotation="-90 90 0" width="20" height="20" src="#woodfloor" repeat="4 4"></a-plane>
+         <a-plane position="0 5.5 -10" width="20" height="11" src="#wall" repeat="2 1"></a-plane>
+         <a-plane position="0 5.5 10" rotation="0 180 0" width="20" height="11" src="#wall" repeat="2 1"></a-plane>
+         <a-plane position="-10 5.5 0" rotation="0 90 0" width="20" height="11" src="#wall" repeat="2 1"></a-plane>
+         <a-plane position="10 5.5 0" rotation="0 -90 0" width="20" height="11" src="#wall" repeat="2 1"></a-plane>
+         <a-plane id = "ceiling" position="0 11 0" scale="1 1 1" width="20" height="20" rotation="90 0 0"
+           material="metalness:1; roughness:0; transparent: true; opacity: .7; shader: standard; 
+           color: #faaf52; side:double;"   ></a-plane>
+       </a-entity>
+         
+         <!--link istic -->
+        <a-entity position="-9.2 10 -9.8"> 
+        <a-link href="http://www.istic.rnu.tn/fr/" material="shader:portal;side:double;backgroundColor:#00fffb" geometry="primitive:circle;segments:1" link="backgroundColor:#00fffb" scale="0.3 0.3 0">
+        </a-link>
+        </a-entity>
+        <!-- end link istic -->
+        
+         <!-- video istic -->
+       <a-entity id="videoplay" class="homeworld" position="-5.2 7.5 -9.8">
+         <a-plane id="videoframe" color="#191817" width="7" height="5"></a-plane>
+         <a-plane id="isticvideo" src="#video" position="0 0 .1" width="7" height="5"  >
+             <a-image id="videocontrole" src="#play" position="0 -2.9 0" scale="0.5 0.5 1" play-pause></a-image>
+           </a-plane>
+       </a-entity>
+           <!--fin video istic-->
+       
+         
+     <!--logo istic avec box-->  
+      <a-entity id="linkplay" class="homeworld" position="-7 1 -8">
+          <a-box   
+                 width="0.9" height="0.9" depth="1" position="0.3 1.4 0.2"
+                 src="#logo"
+                 scale="2 2.5 1.5"
+                 repaet="1 1"
+                 normal-map="#logo"
+                 normal-texture-repeat="1 1"
+                 normal-scale="1 1"
+                 lien   animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0">
+          </a-box>
+            <a-plane id="linkcaption" position="0.4 -0.3 .7" rotation="0 0 0" height=".6" width="auto" color="#191817"
+          text="value: Higher Institue of Information and Communication Technologies; width: 3; wrapCount: 30; align: center" 
+          >
+          </a-plane>
+       </a-entity>
+  <!--  fin logo istic avec box--> 
+       
+                <!--link cola -->
+        <a-entity position="2 10 -9.8"> 
+        <a-link href="https://www.coca-cola.com/" material="shader:portal;side:double;backgroundColor:#E82105" geometry="primitive:circle;segments:1" link="backgroundColor:#E82105" scale="0.3 0.3 0">
+        </a-link>
+        </a-entity>
+        <!-- end link cola -->   
+         
+          <!--video cola -->
+       
+       <a-entity id="videoplaycola" class="homeworld" position="6 7.5 -9.8">
+         <a-plane id="videoframe1" color="#191817" width="7" height="5"></a-plane>
+         <a-plane id="videocola" src="#videocola" position="0 0 .1" width="7" height="5"  >
+             <a-image id="videocontrole1" src="#playcola" position="0 -2.9 0" scale="0.5 0.5 1" play-pause-cola></a-image>
+           </a-plane>
+        
+       </a-entity>
+           <!--fin video cola -->
+       
+         
+         
+           
+     <!--logo d cola avec box -->  
+      <a-entity id="linkplay" class="homeworld" position="1.8 1 -8">
+          <a-box   
+                 width="0.9" height="0.9" depth="1" position="0.9 1.4 0.2"
+                 src="#cola"
+                 scale="2 2.5 1.5"
+                 repaet="1 1"
+                 normal-map="#cola"
+                 normal-texture-repeat="1 1"
+                 normal-scale="1 1"
+                 lien   animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0">
+          </a-box>
+              <a-plane id="linkcaption" position="0.6 -0.3 .7" rotation="0 0 0" height=".6" width="auto" color="#191817"
+          text="value: Coca-Cola; width: 3; wrapCount: 30; align: center" 
+          ></a-plane>
+       </a-entity>
+  <!--fin logo d cola avec box --> 
+         
+           <!--link ooredoo -->
+        <a-entity position="-9.86034 10 -2.95818"> 
+        <a-link href="https://www.ooredoo.tn/" material="shader:portal;side:double;backgroundColor:#e60000" geometry="primitive:circle;segments:64" link="backgroundColor:#e60000" scale="0.3 0.3 0.00001">
+       </a-link>
+        </a-entity>
+        <!-- end link istic -->
+        
+         <!-- video istic -->
+       <a-entity id="videoplay" class="homeworld" position="-5.2 7.5 -9.8">
+         <a-plane id="videoframe" color="#191817" width="7" height="5"></a-plane>
+         <a-plane id="isticvideo" src="#video" position="0 0 .1" width="7" height="5"  >
+             <a-image id="videocontrole" src="#play" position="0 -2.9 0" scale="0.5 0.5 1" play-pause></a-image>
+           </a-plane>
+       </a-entity>
+           <!--fin video istic-->
+       
+         
+     <!--logo istic avec box-->  
+      <a-entity id="linkplay" class="homeworld" position="-7 1 -8">
+          <a-box   
+                 width="0.9" height="0.9" depth="1" position="0.3 1.4 0.2"
+                 src="#logo"
+                 scale="2 2.5 1.5"
+                 repaet="1 1"
+                 normal-map="#logo"
+                 normal-texture-repeat="1 1"
+                 normal-scale="1 1"
+                 lien   animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0">
+          </a-box>
+            <a-plane id="linkcaption" position="0.4 -0.3 .7" rotation="0 0 0" height=".6" width="auto" color="#191817"
+          text="value: Higher Institue of Information and Communication Technologies; width: 3; wrapCount: 30; align: center" 
+          >
+          </a-plane>
+       </a-entity>
+  <!--  fin logo istic avec box--> 
+       
+       <a-circle id="homebutton" position="0 .1 0" rotation="-90 0 0" backhome></a-circle>
+      
+         
+         
+         
+
+        
+       
+         
+     </a-scene>
+    
+  </body>
+  
+</html>
