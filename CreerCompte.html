@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>new test</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <style>
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+
+    @media (max-width: 740px) {
+
+      html,
+      body,
+      header,
+      .view {
+        height: 1100px;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      html,
+      body,
+      header,
+      .view {
+        height: 700px;
+      }
+    }
+
+    .top-nav-collapse {
+      background-color: #3949AB !important;
+    }
+
+    .navbar:not(.top-nav-collapse) {
+      background: transparent !important;
+    }
+
+    @media (max-width: 991px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #3949AB !important;
+      }
+    }
+
+    h6 {
+      line-height: 1.7;
+    }
+  </style>
+
+  <!-- Main navigation -->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <strong>LOGO</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+          aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Accueil
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./noussomme.html">Qui sommes nous ?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html">Se connecter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contacter.html">Nous contacter</a>
+            </li>
+          </ul>
+
+          <form class="form-inline">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Recherche" aria-label="Search">
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+    <!-- Full Page Intro -->
+    <div class="view"
+      style="background-image: url(./images/aa.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+      <!-- Content -->
+      <div class="container">
+        <!--Grid row-->
+        <div class="row pt-lg-5 mt-lg-5">
+          <!--Grid column-->
+          <div class="col-md-2 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft"
+            data-wow-delay="0.3s">
+          </div>
+          <!--Grid column-->
+          <!--Grid column-->
+
+          <div class="col-md-3 col-xl-7 mb-4 ">
+            <!--Form-->
+            <form enctype="multipart/form-data" method="POST" action="./CreerCompte.php">
+              <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                <div class="card-body z-depth-2">
+                  <!--Header-->
+
+                  <!--Body-->
+                  <div class="md-form">
+                    <div class="row">
+                      <div class="col">
+                        <i class="fas fa-user prefix grey-text"></i>
+                        <input type="text" class="form-control" id="prenom" name="prenom" required>
+                        <label class="label" for="prenom">Votre Prénom </label>
+                      </div>
+                      <div class="col">
+
+                        <input type="text" class="form-control" id="nomf" name="nomf" required>
+                        <label class="label" for="nomf"> Votre Nom de famille</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="text" class="form-control" id="email" name="email" required>
+                    <label for="email">Email Address</label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-key prefix grey-text"></i>
+                    <label for="password"> Nouveau mot de passe </label>
+                    <input id="password-field" type="password" class="form-control" id="password" name="password"
+                      required>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-phone prefix grey-text"></i>
+                    <label for="num">Numéro de mobile </label>
+                    <input id="password-field" type="tel" class="form-control" id="num" name="num" required>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input type="date" id="dataN" name="dataN" value="2018-07-22" min="1930-01-01" max="20-12-31">
+                    <label class="label" for="dataN"> </label>
+                  </div>
+
+
+                  <div class="text-center mt-3">
+                    <button class="btn btn-indigo btn-rounded"><span class="fa fa-paper-plane"></span></button>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!--/.Form-->
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
+
+    <!-- Full Page Intro -->
+  </header>
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small primary-color-dark">
+
+    <div class="rgba-stylish-strong">
+
+      <!--Call to action-->
+      <div class="pt-4">
+        <ul class="list-unstyled d-flex justify-content-center mb-0 mt-2 text-uppercase">
+          <li>
+            <a class="mx-3" role="button" href="index.html">accueil</a>
+          </li>
+          <li>
+            <a class="mx-3" role="button" href="./noussomme.html">Qui sommes nous ?</a>
+          </li>
+          <li>
+            <a class="mx-3" role="button" href="./login.html">Se connecter </a>
+          </li>
+          <li>
+            <a class="mx-3" role="button" href="./contacter.html">Nous contacter</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.Call to action-->
+
+      <hr class="my-4">
+
+      <!-- Social icons -->
+      <div class="pb-4">
+        <a href="https://www.facebook.com/" target="_blank">
+          <i class="fab fa-facebook-f mr-3"></i>
+        </a>
+
+        <a href="https://twitter.com/" target="_blank">
+          <i class="fab fa-twitter mr-3"></i>
+        </a>
+
+        <a href="https://www.youtube.com/" target="_blank">
+          <i class="fab fa-youtube mr-3"></i>
+        </a>
+
+        <a href="https://plus.google.com/" target="_blank">
+          <i class="fab fa-google-plus-g mr-3"></i>
+        </a>
+      </div>
+      <!-- Social icons -->
+
+      <!--Copyright-->
+      <div class="footer-copyright py-3">
+        © 2021 Copyright:
+        <a href="./index.html" target="_blank">Virtual Reality</a>
+      </div>
+      <!--/.Copyright-->
+
+    </div>
+
+  </footer>
+  <!--Footer-->
+
+
+
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</body>
+
+</html>
